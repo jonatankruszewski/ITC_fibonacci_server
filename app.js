@@ -20,16 +20,6 @@ MongoClient.connect(
   function (err, db) {
     if (err) throw err;
     const dbo = db.db(dbName);
-    // db.listCollections(
-    //   { name: collection }.next((err, collInfo) => {
-    //     if (collInfo) console.log(collInfo);
-    //   })
-    // );
-    // dbo.createCollection(collection, function (err, res) {
-    //   if (err) throw err;
-    //   console.log("Collection created!");
-    //   db.close();
-    // });
   }
 );
 
