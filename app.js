@@ -12,16 +12,6 @@ const dbName = "fiboSearches";
 const collection = "requestedNumbers";
 const url = process.env.MONGODB_URI || process.env.DB_CONNECTION;
 
-//connecting
-MongoClient.connect(
-  url,
-  { useUnifiedTopology: true, useNewUrlParser: true },
-  function (err, db) {
-    if (err) throw err;
-    const dbo = db.db(dbName);
-  }
-);
-
 function wait(time) {
   return new Promise((resolve) => {
     setTimeout(resolve, time);
