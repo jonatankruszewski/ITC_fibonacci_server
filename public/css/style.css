@@ -1,0 +1,48 @@
+#calculate-button[disabled]:hover {
+  cursor: default;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+  max-height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.border-1 {
+  border: 1px solid red;
+}
+
+#server-items {
+  overflow-y: scroll;
+}
+
+#server-cards {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.style-2::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+.style-2::-webkit-scrollbar {
+  width: 12px;
+  background-color: #f5f5f5;
+}
+
+.style-2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: black;
+}
