@@ -20,11 +20,16 @@ MongoClient.connect(
   function (err, db) {
     if (err) throw err;
     const dbo = db.db(dbName);
-    dbo.createCollection(collection, function (err, res) {
-      if (err) throw err;
-      console.log("Collection created!");
-      db.close();
-    });
+    // db.listCollections(
+    //   { name: collection }.next((err, collInfo) => {
+    //     if (collInfo) console.log(collInfo);
+    //   })
+    // );
+    // dbo.createCollection(collection, function (err, res) {
+    //   if (err) throw err;
+    //   console.log("Collection created!");
+    //   db.close();
+    // });
   }
 );
 
@@ -36,11 +41,9 @@ function wait(time) {
 
 function fibonacci(n, memo) {
   memo = memo || {};
-  if (n in memo) {
-    return memo[n];
-  }
   if (n === 0) return 0;
-  if (n <= 1) return 1;
+  if (n < 2) return 1;
+  if (n in memo) return memo[n];
   return (memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo));
 }
 
@@ -86,7 +89,7 @@ app.get("/getFibonacciResults", async (req, res) => {
   );
 });
 
-const PORT = process.env.PORT || 5050;
+const PORT = process.env.PORT || 5020;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}. \nPress Ctrl+C to quit.`);
 });
