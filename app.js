@@ -86,10 +86,6 @@ app.get("/getFibonacciResults", async (req, res) => {
   );
 });
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(public, "index.html"));
-});
-
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}. \nPress Ctrl+C to quit.`);
